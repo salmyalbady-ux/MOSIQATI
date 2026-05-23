@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الهدايا - موسيقاتي</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma;
+}
+
+body{
+    background-color:#0b1d3a;
+    direction:rtl;
+    color:white;
+}
+
+/* الهيدر */
+
+header{
+    background-color:#08162d;
+    padding:20px;
+    border-bottom:3px solid #d4af37;
+}
+
+/* الناف */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* اللوقو */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#d4af37;
+    font-size:34px;
+    font-weight:bold;
+}
+
+/* صورة اللوقو */
+
+.logo-img{
+    width:85px;
+    height:85px;
+    object-fit:contain;
+    background:white;
+    padding:6px;
+    border-radius:50%;
+}
+
+/* قائمة الأزرار */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:15px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+/* صور الأزرار */
+
+.nav-image{
+    height:70px;
+    width:auto;
+    object-fit:contain;
+    transition:0.3s;
+}
+
+.nav-image:hover{
+    transform:scale(1.1);
+}
+
+/* عنوان الصفحة */
+
+.page-title{
+    text-align:center;
+    margin-top:40px;
+    color:#d4af37;
+    font-size:44px;
+}
+
+/* نص الصفحة */
+
+.page-text{
+    text-align:center;
+    margin-top:20px;
+    font-size:20px;
+    line-height:2;
+    padding:0 40px;
+}
+
+/* سلة التسوق */
+
+.cart{
+    position:fixed;
+    top:130px;
+    left:20px;
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    padding:20px;
+    border-radius:15px;
+    width:260px;
+    z-index:1000;
+}
+
+.cart h3{
+    color:#d4af37;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.cart-item{
+    background-color:#0f2142;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+}
+
+.delete-btn{
+    background:red;
+    color:white;
+    border:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* قسم الهدايا */
+
+.gifts{
+    padding:40px;
+}
+
+/* شبكة المنتجات */
+
+.gift-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* الكرت */
+
+.card{
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* صورة المنتج */
+
+.card-image{
+    width:100%;
+    height:300px;
+    overflow:hidden;
+    border-radius:15px;
+    margin-bottom:20px;
+    background:#08162d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* صورة المنتج */
+
+.product-img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:10px;
+}
+
+/* العنوان */
+
+.card h2{
+    color:#d4af37;
+    margin-bottom:10px;
+    font-size:26px;
+}
+
+/* الوصف */
+
+.card p{
+    margin-bottom:15px;
+    line-height:1.7;
+    font-size:17px;
+}
+
+/* السعر */
+
+.price{
+    color:#d4af37;
+    font-size:24px;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+/* الزر */
+
+.btn{
+    background-color:#d4af37;
+    color:#0b1d3a;
+    border:none;
+    padding:14px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background-color:white;
+    transform:scale(1.05);
+}
+
+/* الفوتر */
+
+footer{
+    margin-top:50px;
+    background-color:#08162d;
+    text-align:center;
+    padding:25px;
+    border-top:3px solid #d4af37;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- الهيدر -->
+
+<header>
+
+<nav>
+
+<!-- اللوقو -->
+
+<div class="logo">
+
+<img src="../img/logo1.png" class="logo-img">
+
+<span>
+🎵 موسيقاتي
+</span>
+
+</div>
+
+<!-- الأزرار -->
+
+<ul>
+
+<li>
+<a href="index.html">
+<img src="../img/R1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="store.html">
+<img src="../img/M1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="gifts.html">
+<img src="../img/H1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="offers.html">
+<img src="../img/32.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="about.html">
+<img src="../img/N1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+<img src="../img/T1.png" class="nav-image">
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- عنوان -->
+
+<h1 class="page-title">
+الهدايا الموسيقية
+</h1>
+
+<p class="page-text">
+
+استكشف مجموعة مميزة من الهدايا الموسيقية التي تناسب جميع عشاق الفن والموسيقى،
+بتصاميم جميلة وجودة عالية.
+
+</p>
+
+<!-- سلة التسوق -->
+
+<div class="cart">
+
+<h3>
+🛒 سلة الهدايا
+</h3>
+
+<div id="cart-items">
+
+<p id="empty-cart">
+لا توجد هدايا مضافة
+</p>
+
+</div>
+
+</div>
+
+<!-- المنتجات -->
+
+<section class="gifts">
+
+<div class="gift-container">
+
+<!-- 1 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-23 كوب.png" class="product-img">
+
+</div>
+
+<h2>
+كوب موسيقي
+</h2>
+
+<p>
+كوب بتصميم نوتات موسيقية أنيق.
+</p>
+
+<div class="price">
+15 JD
+</div>
+
+<button class="btn" onclick="addToCart('كوب موسيقي')">
+شراء الآن
+</button>
+
+</div>
+
+<!-- 2 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-23 سماعات هدية.png" class="product-img">
+
+</div>
+
+<h2>
+سماعات هدية
+</h2>
+
+<p>
+سماعات عصرية بجودة صوت ممتازة.
+</p>
+
+<div class="price">
+45 JD
+</div>
+
+<button class="btn" onclick="addToCart('سماعات هدية')">
+شراء الآن
+</button>
+
+</div>
+
+<!-- 3 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-23 003542ميدالية.png" class="product-img">
+
+</div>
+
+<h2>
+ميدالية موسيقية
+</h2>
+
+<p>
+ميدالية معدنية بتصميم موسيقي رائع.
+</p>
+
+<div class="price">
+10 JD
+</div>
+
+<button class="btn" onclick="addToCart('ميدالية موسيقية')">
+شراء الآن
+</button>
+
+</div>
+
+<!-- 4 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-23 دفاتر.png" class="product-img">
+
+</div>
+
+<h2>
+دفتر نوتات
+</h2>
+
+<p>
+دفتر مخصص لكتابة النوتات الموسيقية.
+</p>
+
+<div class="price">
+20 JD
+</div>
+
+<button class="btn" onclick="addToCart('دفتر نوتات')">
+شراء الآن
+</button>
+
+</div>
+
+<!-- 5 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-23 تذكره.png" class="product-img">
+
+</div>
+
+<h2>
+كوبون هدية
+</h2>
+
+<p>
+بطاقة هدية مميزة لمحبي الموسيقى.
+</p>
+
+<div class="price">
+50 JD
+</div>
+
+<button class="btn" onclick="addToCart('كوبون هدية')">
+شراء الآن
+</button>
+
+</div>
+
+<!-- 6 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/ee426933-14fc-4f57-af38-fe3c4e556971وسادة.png" class="product-img">
+
+</div>
+
+<h2>
+وسادة موسيقية
+</h2>
+
+<p>
+وسادة مريحة بتصميم آلات موسيقية.
+</p>
+
+<div class="price">
+25 JD
+</div>
+
+<button class="btn" onclick="addToCart('وسادة موسيقية')">
+شراء الآن
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- الفوتر -->
+
+<footer>
+
+<p>
+جميع الحقوق محفوظة © موسيقاتي 2026
+</p>
+
+</footer>
+
+<script>
+
+function addToCart(productName){
+
+let cartItems = document.getElementById("cart-items");
+
+let emptyCart = document.getElementById("empty-cart");
+
+if(emptyCart){
+emptyCart.style.display = "none";
+}
+
+let item = document.createElement("div");
+
+item.classList.add("cart-item");
+
+item.innerHTML = `
+<span>${productName}</span>
+<button class="delete-btn" onclick="removeItem(this)">X</button>
+`;
+
+cartItems.appendChild(item);
+
+}
+
+function removeItem(button){
+
+button.parentElement.remove();
+
+let cartItems = document.getElementById("cart-items");
+
+if(cartItems.children.length === 0){
+
+cartItems.innerHTML = `
+<p id="empty-cart">
+لا توجد هدايا مضافة
+</p>
+`;
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

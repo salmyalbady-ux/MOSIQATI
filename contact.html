@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تواصل معنا - موسيقاتي</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma;
+}
+
+body{
+    background-color:#0b1d3a;
+    direction:rtl;
+    color:white;
+}
+
+/* الهيدر */
+
+header{
+    background-color:#08162d;
+    padding:20px;
+    border-bottom:3px solid #d4af37;
+}
+
+/* شريط التنقل */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* اللوقو */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#d4af37;
+    font-size:34px;
+    font-weight:bold;
+}
+
+/* صورة اللوقو */
+
+.logo-img{
+    width:85px;
+    height:85px;
+    object-fit:contain;
+    background:white;
+    padding:6px;
+    border-radius:50%;
+}
+
+/* قائمة الازرار */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:15px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+/* صور الازرار */
+
+.nav-image{
+    height:70px;
+    width:auto;
+    object-fit:contain;
+    transition:0.3s;
+}
+
+.nav-image:hover{
+    transform:scale(1.1);
+}
+
+/* عنوان الصفحة */
+
+.page-title{
+    text-align:center;
+    color:#d4af37;
+    font-size:45px;
+    margin-top:40px;
+}
+
+/* المحتوى */
+
+.contact-container{
+    width:90%;
+    margin:auto;
+    margin-top:40px;
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+/* معلومات التواصل */
+
+.contact-info{
+    flex:1;
+    min-width:280px;
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    border-radius:25px;
+    padding:30px;
+}
+
+.contact-info h2{
+    color:#d4af37;
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+.info-box{
+    margin-bottom:20px;
+    background-color:#0f2142;
+    padding:18px;
+    border-radius:12px;
+    font-size:18px;
+}
+
+/* الفورم */
+
+.contact-form{
+    flex:1.5;
+    min-width:320px;
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    border-radius:25px;
+    padding:30px;
+}
+
+.contact-form h2{
+    color:#d4af37;
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+/* الخانات */
+
+input,
+textarea{
+    width:100%;
+    padding:18px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:12px;
+    font-size:17px;
+    background:white;
+}
+
+textarea{
+    height:170px;
+    resize:none;
+}
+
+/* الزر */
+
+.btn{
+    background-color:#d4af37;
+    color:#0b1d3a;
+    border:none;
+    padding:15px 28px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:17px;
+}
+
+.btn:hover{
+    background-color:white;
+    transform:scale(1.05);
+}
+
+/* رسالة الارسال */
+
+.success-message{
+    margin-top:20px;
+    background-color:#1d7a3d;
+    padding:18px;
+    border-radius:12px;
+    display:none;
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* قسم الصيانة */
+
+.support-section{
+    width:90%;
+    margin:auto;
+    margin-top:50px;
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    border-radius:25px;
+    padding:30px;
+}
+
+/* العنوان */
+
+.support-title{
+    color:#d4af37;
+    font-size:38px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+/* الجدول */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+/* العناوين */
+
+table th{
+    background-color:#d4af37;
+    color:#0b1d3a;
+    padding:18px;
+    font-size:18px;
+}
+
+/* البيانات */
+
+table td{
+    border:1px solid #d4af37;
+    padding:18px;
+    text-align:center;
+    font-size:17px;
+}
+
+/* الفوتر */
+
+footer{
+    margin-top:50px;
+    background-color:#08162d;
+    text-align:center;
+    padding:25px;
+    border-top:3px solid #d4af37;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- الهيدر -->
+
+<header>
+
+<nav>
+
+<!-- اللوقو -->
+
+<div class="logo">
+
+<img src="../img/logo1.png" class="logo-img">
+
+<span>
+🎵 موسيقاتي
+</span>
+
+</div>
+
+<!-- الازرار -->
+
+<ul>
+
+<li>
+<a href="index.html">
+<img src="../img/R1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="store.html">
+<img src="../img/M1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="gifts.html">
+<img src="../img/H1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="offers.html">
+<img src="../img/32.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="about.html">
+<img src="../img/N1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+<img src="../img/T1.png" class="nav-image">
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- عنوان الصفحة -->
+
+<h1 class="page-title">
+تواصل معنا
+</h1>
+
+<!-- المحتوى -->
+
+<div class="contact-container">
+
+<!-- معلومات التواصل -->
+
+<div class="contact-info">
+
+<h2>
+معلومات التواصل
+</h2>
+
+<div class="info-box">
+📞 الهاتف: 0781323617
+</div>
+
+<div class="info-box">
+💬 واتساب: 0781323617
+</div>
+
+<div class="info-box">
+📩 الرسائل: 0781323617
+</div>
+
+<div class="info-box">
+📷 Instagram: @musicaty_store
+</div>
+
+</div>
+
+<!-- الفورم -->
+
+<div class="contact-form">
+
+<h2>
+إرسال رسالة
+</h2>
+
+<form id="contactForm" onsubmit="showMessage(); return false;">
+
+<input type="text" id="name" placeholder="الاسم الكامل" required>
+
+<input type="text" id="phone" placeholder="رقم الهاتف" required>
+
+<textarea id="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+<button class="btn" type="submit">
+إرسال الرسالة
+</button>
+
+<div class="success-message" id="successBox">
+✅ تم إرسال الرسالة بنجاح
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- قسم الصيانة -->
+
+<div class="support-section">
+
+<h2 class="support-title">
+الصيانة والاستشارات
+</h2>
+
+<table>
+
+<tr>
+<th>الاسم</th>
+<th>رقم الهاتف</th>
+<th>نوع المشكلة</th>
+</tr>
+
+<tr>
+<td>أحمد خالد</td>
+<td>0798456123</td>
+<td>صيانة بيانو كهربائي</td>
+</tr>
+
+<tr>
+<td>محمد سامر</td>
+<td>0787412365</td>
+<td>استشارة شراء قيثارة</td>
+</tr>
+
+<tr>
+<td>سارة علي</td>
+<td>0779654123</td>
+<td>مشكلة في السماعات</td>
+</tr>
+
+<tr>
+<td>عمر يوسف</td>
+<td>0796321458</td>
+<td>صيانة ميكروفون</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- الفوتر -->
+
+<footer>
+
+<p>
+جميع الحقوق محفوظة © موسيقاتي 2026
+</p>
+
+</footer>
+
+<script>
+
+function showMessage(){
+
+document.getElementById("successBox").style.display = "block";
+
+/* تفريغ الخانات */
+
+document.getElementById("name").value = "";
+document.getElementById("phone").value = "";
+document.getElementById("message").value = "";
+
+}
+
+</script>
+
+</body>
+
+</html>

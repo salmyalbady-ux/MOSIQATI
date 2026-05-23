@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المتجر - موسيقاتي</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma;
+}
+
+body{
+    background-color:#0b1d3a;
+    direction:rtl;
+    color:white;
+}
+
+/* الهيدر */
+
+header{
+    background-color:#08162d;
+    padding:20px;
+    border-bottom:3px solid #d4af37;
+}
+
+/* شريط التنقل */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* اللوقو */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#d4af37;
+    font-size:32px;
+    font-weight:bold;
+}
+
+/* صورة اللوقو */
+
+.logo-img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+}
+
+/* قائمة الازرار */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:15px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* صور الازرار */
+
+.nav-image{
+    height:75px;
+    width:auto;
+    object-fit:contain;
+    transition:0.3s;
+}
+
+.nav-image:hover{
+    transform:scale(1.08);
+}
+
+/* عنوان الصفحة */
+
+.page-title{
+    text-align:center;
+    margin-top:40px;
+    color:#d4af37;
+    font-size:45px;
+}
+
+/* السلة */
+
+.cart{
+    position:fixed;
+    top:130px;
+    left:20px;
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    padding:20px;
+    border-radius:15px;
+    width:260px;
+    z-index:1000;
+}
+
+.cart h3{
+    color:#d4af37;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.cart-item{
+    background-color:#0f2142;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+}
+
+/* زر الحذف */
+
+.delete-btn{
+    background:red;
+    color:white;
+    border:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* المنتجات */
+
+.products{
+    padding:40px;
+}
+
+/* شبكة المنتجات */
+
+.product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* الكروت */
+
+.card{
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* صورة المنتج */
+
+.card-image{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+    border-radius:15px;
+    margin-bottom:20px;
+    background-color:#08162d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* صورة المنتج نفسها */
+
+.product-img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:10px;
+}
+
+/* النص */
+
+.card h2{
+    color:#d4af37;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.card p{
+    margin-bottom:15px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.price{
+    font-size:25px;
+    margin:20px 0;
+    color:#d4af37;
+    font-weight:bold;
+}
+
+/* الزر */
+
+.btn{
+    background-color:#d4af37;
+    color:#0b1d3a;
+    border:none;
+    padding:14px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+    font-size:16px;
+}
+
+.btn:hover{
+    background-color:white;
+    transform:scale(1.05);
+}
+
+/* الفوتر */
+
+footer{
+    margin-top:50px;
+    background-color:#08162d;
+    text-align:center;
+    padding:25px;
+    border-top:3px solid #d4af37;
+    font-size:18px;
+}
+
+/* موبايل */
+
+@media(max-width:900px){
+
+.cart{
+    position:static;
+    width:90%;
+    margin:30px auto;
+}
+
+.products{
+    padding:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- الهيدر -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<img src="../img/logo1.png" class="logo-img">
+
+<span>
+🎵 موسيقاتي
+</span>
+
+</div>
+
+<ul>
+
+<li>
+<a href="index.html">
+<img src="../img/R1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="store.html">
+<img src="../img/M1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="gifts.html">
+<img src="../img/H1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="offers.html">
+<img src="../img/32.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="about.html">
+<img src="../img/N1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+<img src="../img/T1.png" class="nav-image">
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- عنوان الصفحة -->
+
+<h1 class="page-title">
+المتجر
+</h1>
+
+<!-- السلة -->
+
+<div class="cart">
+
+<h3>
+🛒 سلة التسوق
+</h3>
+
+<div id="cart-items">
+
+<p id="empty-cart">
+لا توجد منتجات مضافة
+</p>
+
+</div>
+
+</div>
+
+<!-- المنتجات -->
+
+<section class="products">
+
+<div class="product-container">
+
+<!-- المنتج الاول -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-22 .png" class="product-img">
+
+</div>
+
+<h2>
+قيثارة كلاسيكية
+</h2>
+
+<p>
+قيثارة بجودة احترافية وصوت نقي.
+</p>
+
+<div class="price">
+250 JD
+</div>
+
+<button class="btn" onclick="addToCart('قيثارة كلاسيكية')">
+أضف إلى السلة
+</button>
+
+</div>
+
+<!-- المنتج الثاني -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot95895845859.png" class="product-img">
+
+</div>
+
+<h2>
+بيانو احترافي
+</h2>
+
+<p>
+بيانو عصري مناسب للمبتدئين والمحترفين.
+</p>
+
+<div class="price">
+900 JD
+</div>
+
+<button class="btn" onclick="addToCart('بيانو احترافي')">
+أضف إلى السلة
+</button>
+
+</div>
+
+<!-- المنتج الثالث -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-22 6768686768756587687.png" class="product-img">
+
+</div>
+
+<h2>
+طقم درمز
+</h2>
+
+<p>
+معدات احترافية لعشاق الإيقاع والموسيقى.
+</p>
+
+<div class="price">
+600 JD
+</div>
+
+<button class="btn" onclick="addToCart('طقم درمز')">
+أضف إلى السلة
+</button>
+
+</div>
+
+<!-- المنتج الرابع -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot95895845859.png" class="product-img">
+
+</div>
+
+<h2>
+عود شرقي
+</h2>
+
+<p>
+عود فاخر بصوت شرقي أصيل.
+</p>
+
+<div class="price">
+300 JD
+</div>
+
+<button class="btn" onclick="addToCart('عود شرقي')">
+أضف إلى السلة
+</button>
+
+</div>
+
+<!-- المنتج الخامس -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-22 سماعات.png" class="product-img">
+
+</div>
+
+<h2>
+سماعات استوديو
+</h2>
+
+<p>
+سماعات احترافية للتسجيل الصوتي.
+</p>
+
+<div class="price">
+120 JD
+</div>
+
+<button class="btn" onclick="addToCart('سماعات استوديو')">
+أضف إلى السلة
+</button>
+
+</div>
+
+<!-- المنتج السادس -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-22 كيان.png" class="product-img">
+
+</div>
+
+<h2>
+كمان احترافي
+</h2>
+
+<p>
+كمان بجودة ممتازة وصوت ناعم مناسب للعزف الاحترافي.
+</p>
+
+<div class="price">
+220 JD
+</div>
+
+<button class="btn" onclick="addToCart('كمان احترافي')">
+أضف إلى السلة
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- الفوتر -->
+
+<footer>
+
+<p>
+جميع الحقوق محفوظة © موسيقاتي 2026
+</p>
+
+</footer>
+
+<!-- الجافاسكربت -->
+
+<script>
+
+/* إضافة منتج */
+
+function addToCart(productName){
+
+let cartItems = document.getElementById("cart-items");
+
+/* حذف النص الفاضي */
+
+let emptyCart = document.getElementById("empty-cart");
+
+if(emptyCart){
+
+emptyCart.remove();
+
+}
+
+/* إنشاء عنصر */
+
+let item = document.createElement("div");
+
+item.className = "cart-item";
+
+/* محتوى العنصر */
+
+item.innerHTML = `
+
+<span>${productName}</span>
+
+<button class="delete-btn" onclick="removeItem(this)">
+X
+</button>
+
+`;
+
+/* إضافة للسلة */
+
+cartItems.appendChild(item);
+
+}
+
+/* حذف منتج */
+
+function removeItem(button){
+
+button.parentElement.remove();
+
+/* إذا السلة فاضية */
+
+let cartItems = document.getElementById("cart-items");
+
+if(cartItems.children.length == 0){
+
+cartItems.innerHTML = `
+
+<p id="empty-cart">
+لا توجد منتجات مضافة
+</p>
+
+`;
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

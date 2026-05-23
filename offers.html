@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>العروض الخاصة - موسيقاتي</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma;
+}
+
+body{
+    background-color:#0b1d3a;
+    direction:rtl;
+    color:white;
+}
+
+/* الهيدر */
+
+header{
+    background-color:#08162d;
+    padding:20px;
+    border-bottom:3px solid #d4af37;
+}
+
+/* شريط التنقل */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* اللوقو */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#d4af37;
+    font-size:34px;
+    font-weight:bold;
+}
+
+/* صورة اللوقو */
+
+.logo-img{
+    width:85px;
+    height:85px;
+    object-fit:contain;
+    background:white;
+    padding:6px;
+    border-radius:50%;
+}
+
+/* الازرار */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:15px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+/* صور الازرار */
+
+.nav-image{
+    height:70px;
+    width:auto;
+    object-fit:contain;
+    transition:0.3s;
+}
+
+.nav-image:hover{
+    transform:scale(1.1);
+}
+
+/* عنوان الصفحة */
+
+.page-title{
+    text-align:center;
+    color:#d4af37;
+    font-size:45px;
+    margin-top:40px;
+}
+
+/* وصف الصفحة */
+
+.page-text{
+    text-align:center;
+    margin-top:20px;
+    font-size:20px;
+    line-height:2;
+    padding:0 40px;
+}
+
+/* السلة */
+
+.cart{
+    position:fixed;
+    top:130px;
+    left:20px;
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    padding:20px;
+    border-radius:15px;
+    width:260px;
+    z-index:1000;
+}
+
+.cart h3{
+    color:#d4af37;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.cart-item{
+    background-color:#0f2142;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+}
+
+.delete-btn{
+    background:red;
+    color:white;
+    border:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* العروض */
+
+.offers{
+    padding:40px;
+}
+
+/* شبكة العروض */
+
+.offer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* الكروت */
+
+.card{
+    background-color:#13284d;
+    border:2px solid #d4af37;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* بوكس العرض */
+
+.offer-box{
+    position:relative;
+}
+
+/* شريط الخصم */
+
+.discount{
+    position:absolute;
+    top:0;
+    right:0;
+    background-color:red;
+    padding:10px 15px;
+    border-radius:0 0 12px 0;
+    font-weight:bold;
+    z-index:2;
+}
+
+/* صورة العرض */
+
+.card-image{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+    background:#08162d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* الصورة */
+
+.offer-img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:10px;
+}
+
+/* المحتوى */
+
+.card-content{
+    padding:20px;
+    text-align:center;
+}
+
+.card-content h2{
+    color:#d4af37;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.card-content p{
+    margin-bottom:20px;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* السعر القديم */
+
+.old-price{
+    text-decoration:line-through;
+    color:#999;
+    font-size:18px;
+}
+
+/* السعر الجديد */
+
+.new-price{
+    color:#d4af37;
+    font-size:28px;
+    margin-top:10px;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+/* الزر */
+
+.btn{
+    background-color:#d4af37;
+    color:#0b1d3a;
+    border:none;
+    padding:14px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background-color:white;
+    transform:scale(1.05);
+}
+
+/* الفوتر */
+
+footer{
+    margin-top:50px;
+    background-color:#08162d;
+    text-align:center;
+    padding:25px;
+    border-top:3px solid #d4af37;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- الهيدر -->
+
+<header>
+
+<nav>
+
+<!-- اللوقو -->
+
+<div class="logo">
+
+<img src="../img/logo1.png" class="logo-img">
+
+<span>
+🎵 موسيقاتي
+</span>
+
+</div>
+
+<!-- الازرار -->
+
+<ul>
+
+<li>
+<a href="index.html">
+<img src="../img/R1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="store.html">
+<img src="../img/M1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="gifts.html">
+<img src="../img/H1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="offers.html">
+<img src="../img/32.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="about.html">
+<img src="../img/N1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+<img src="../img/T1.png" class="nav-image">
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- عنوان الصفحة -->
+
+<h1 class="page-title">
+العروض الخاصة
+</h1>
+
+<p class="page-text">
+
+استمتع بأفضل الخصومات والعروض الحصرية 
+على الآلات الموسيقية والإكسسوارات لفترة محدودة.
+
+</p>
+
+<!-- السلة -->
+
+<div class="cart">
+
+<h3>
+🛒 سلة العروض
+</h3>
+
+<div id="cart-items">
+
+<p id="empty-cart">
+لا توجد عروض مضافة
+</p>
+
+</div>
+
+</div>
+
+<!-- العروض -->
+
+<section class="offers">
+
+<div class="offer-container">
+
+<!-- العرض الاول -->
+
+<div class="card">
+
+<div class="offer-box">
+
+<div class="discount">
+خصم 30%
+</div>
+
+<div class="card-image">
+
+<img src="../img/جيتار.png" class="offer-img">
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<h2>
+قيثارة احترافية
+</h2>
+
+<p>
+قيثارة بجودة عالية مع تصميم فاخر وصوت نقي.
+</p>
+
+<div class="old-price">
+350 JD
+</div>
+
+<div class="new-price">
+245 JD
+</div>
+
+<button class="btn" onclick="addToCart('قيثارة احترافية')">
+احصل على العرض
+</button>
+
+</div>
+
+</div>
+
+<!-- العرض الثاني -->
+
+<div class="card">
+
+<div class="offer-box">
+
+<div class="discount">
+خصم 20%
+</div>
+
+<div class="card-image">
+
+<img src="../img/بيانو كهربائي.png" class="offer-img">
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<h2>
+بيانو كهربائي
+</h2>
+
+<p>
+بيانو عصري مناسب للمبتدئين والمحترفين.
+</p>
+
+<div class="old-price">
+1000 JD
+</div>
+
+<div class="new-price">
+800 JD
+</div>
+
+<button class="btn" onclick="addToCart('بيانو كهربائي')">
+احصل على العرض
+</button>
+
+</div>
+
+</div>
+
+<!-- العرض الثالث -->
+
+<div class="card">
+
+<div class="offer-box">
+
+<div class="discount">
+خصم 15%
+</div>
+
+<div class="card-image">
+
+<img src="../img/سماعات.png" class="offer-img">
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<h2>
+سماعات استوديو
+</h2>
+
+<p>
+سماعات احترافية لعشاق التسجيل الصوتي.
+</p>
+
+<div class="old-price">
+150 JD
+</div>
+
+<div class="new-price">
+127 JD
+</div>
+
+<button class="btn" onclick="addToCart('سماعات استوديو')">
+احصل على العرض
+</button>
+
+</div>
+
+</div>
+
+<!-- العرض الرابع -->
+
+<div class="card">
+
+<div class="offer-box">
+
+<div class="discount">
+خصم 40%
+</div>
+
+<div class="card-image">
+
+<img src="../img/مايكرو.png" class="offer-img">
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<h2>
+ميكروفون احترافي
+</h2>
+
+<p>
+ميكروفون بجودة ممتازة للتسجيل والغناء.
+</p>
+
+<div class="old-price">
+250 JD
+</div>
+
+<div class="new-price">
+150 JD
+</div>
+
+<button class="btn" onclick="addToCart('ميكروفون احترافي')">
+احصل على العرض
+</button>
+
+</div>
+
+</div>
+
+<!-- العرض الخامس -->
+
+<div class="card">
+
+<div class="offer-box">
+
+<div class="discount">
+خصم 25%
+</div>
+
+<div class="card-image">
+
+<img src="../img/عود.png" class="offer-img">
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<h2>
+عود شرقي
+</h2>
+
+<p>
+عود فاخر بصوت شرقي أصيل وتصميم أنيق.
+</p>
+
+<div class="old-price">
+400 JD
+</div>
+
+<div class="new-price">
+300 JD
+</div>
+
+<button class="btn" onclick="addToCart('عود شرقي')">
+احصل على العرض
+</button>
+
+</div>
+
+</div>
+
+<!-- العرض السادس -->
+
+<div class="card">
+
+<div class="offer-box">
+
+<div class="discount">
+خصم 10%
+</div>
+
+<div class="card-image">
+
+<img src="../img/درمز.png" class="offer-img">
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<h2>
+طقم درمز
+</h2>
+
+<p>
+معدات موسيقية احترافية لعشاق الإيقاع.
+</p>
+
+<div class="old-price">
+700 JD
+</div>
+
+<div class="new-price">
+630 JD
+</div>
+
+<button class="btn" onclick="addToCart('طقم درمز')">
+احصل على العرض
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- الفوتر -->
+
+<footer>
+
+<p>
+جميع الحقوق محفوظة © موسيقاتي 2026
+</p>
+
+</footer>
+
+<script>
+
+function addToCart(productName){
+
+let cartItems = document.getElementById("cart-items");
+
+let emptyCart = document.getElementById("empty-cart");
+
+if(emptyCart){
+emptyCart.style.display = "none";
+}
+
+let item = document.createElement("div");
+
+item.classList.add("cart-item");
+
+item.innerHTML = `
+<span>${productName}</span>
+<button class="delete-btn" onclick="removeItem(this)">X</button>
+`;
+
+cartItems.appendChild(item);
+
+}
+
+function removeItem(button){
+
+button.parentElement.remove();
+
+let cartItems = document.getElementById("cart-items");
+
+if(cartItems.children.length === 0){
+
+cartItems.innerHTML = `
+<p id="empty-cart">
+لا توجد عروض مضافة
+</p>
+`;
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

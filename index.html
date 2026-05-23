@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الصفحة الرئيسية</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma;
+}
+
+body{
+    background-color:#0b1d3a;
+    color:white;
+    direction:rtl;
+}
+
+/* الهيدر */
+
+header{
+    background-color:#08162d;
+    padding:20px;
+    border-bottom:3px solid #d4af37;
+}
+
+/* شريط التنقل */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/* اللوقو */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:#d4af37;
+    font-size:32px;
+    font-weight:bold;
+}
+
+/* صورة اللوقو */
+
+.logo-img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    border-radius:50%;
+    background-color:white;
+    padding:5px;
+}
+
+/* قائمة الازرار */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:15px;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* صور الازرار */
+
+.nav-image{
+    height:80px;
+    width:auto;
+    object-fit:contain;
+    transition:0.3s;
+}
+
+/* تأثير الازرار */
+
+.nav-image:hover{
+    transform:scale(1.08);
+}
+
+/* القسم الرئيسي */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:50px;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* النص */
+
+.hero-text{
+    flex:1;
+    min-width:300px;
+}
+
+.hero-text h1{
+    font-size:42px;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    line-height:2;
+    font-size:20px;
+}
+
+/* الصورة الرئيسية */
+
+.hero-image{
+    flex:1;
+    min-width:300px;
+    max-width:500px;
+    border-radius:20px;
+    overflow:hidden;
+    border:3px solid #d4af37;
+}
+
+/* صورة الهيرو */
+
+.hero-main-img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+}
+
+/* قسم المنتجات */
+
+.products{
+    padding:40px;
+}
+
+.section-title{
+    text-align:center;
+    color:#d4af37;
+    font-size:38px;
+    margin-bottom:40px;
+}
+
+/* المنتجات */
+
+.product-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+/* الكرت */
+
+.card{
+    background-color:#13284d;
+    padding:20px;
+    border-radius:20px;
+    width:320px;
+    text-align:center;
+    border:2px solid #d4af37;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* صور المنتجات */
+
+.card-image{
+    width:100%;
+    height:300px;
+    overflow:hidden;
+    border-radius:15px;
+    background-color:#08162d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* صورة المنتج */
+
+.product-img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:10px;
+}
+
+/* النص */
+
+.card h3{
+    color:#d4af37;
+    margin-top:20px;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+.card p{
+    margin-bottom:20px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* الزر */
+
+.btn{
+    background-color:#d4af37;
+    color:#0b1d3a;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:16px;
+}
+
+.btn:hover{
+    background-color:white;
+    transform:scale(1.05);
+}
+
+/* الفوتر */
+
+footer{
+    margin-top:50px;
+    background-color:#08162d;
+    padding:25px;
+    text-align:center;
+    border-top:3px solid #d4af37;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- الهيدر -->
+
+<header>
+
+<nav>
+
+<!-- اللوقو -->
+
+<div class="logo">
+
+<img src="../img/logo1.png" class="logo-img">
+
+<span>
+🎵 موسيقاتي
+</span>
+
+</div>
+
+<!-- الازرار -->
+
+<ul>
+
+<li>
+<a href="index.html">
+<img src="../img/R1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="store.html">
+<img src="../img/M1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="gifts.html">
+<img src="../img/H1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="offers.html">
+<img src="../img/32.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="about.html">
+<img src="../img/N1.png" class="nav-image">
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+<img src="../img/T1.png" class="nav-image">
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- القسم الرئيسي -->
+
+<section class="hero">
+
+<!-- النص -->
+
+<div class="hero-text">
+
+<h1>
+أهلاً بكم في متجر موسيقاتي
+</h1>
+
+<p>
+
+متجر موسيقاتي يوفر أفضل الآلات الموسيقية 
+والإكسسوارات بجودة عالية وتصاميم حديثة 
+تناسب جميع عشاق الموسيقى.
+
+</p>
+
+</div>
+
+<!-- الصورة الرئيسية -->
+
+<div class="hero-image">
+
+<img src="../img/Screenshot1.png" class="hero-main-img">
+
+</div>
+
+</section>
+
+<!-- قسم المنتجات -->
+
+<section class="products">
+
+<h2 class="section-title">
+أشهر المنتجات
+</h2>
+
+<div class="product-container">
+
+<!-- المنتج الاول -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-22 .png" class="product-img">
+
+</div>
+
+<h3>
+قيثارة كلاسيكية
+</h3>
+
+<p>
+أفضل أنواع القيثارات بجودة عالية.
+</p>
+
+<button class="btn" onclick="window.location.href='store.html'">
+عرض المنتج
+</button>
+
+</div>
+
+<!-- المنتج الثاني -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot95895845859.png" class="product-img">
+
+</div>
+
+<h3>
+بيانو احترافي
+</h3>
+
+<p>
+بيانو بتصميم عصري وصوت احترافي.
+</p>
+
+<button class="btn" onclick="window.location.href='store.html'">
+عرض المنتج
+</button>
+
+</div>
+
+<!-- المنتج الثالث -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img src="../img/Screenshot 2026-05-22 6768686768756587687.png" class="product-img">
+
+</div>
+
+<h3>
+طقم درمز
+</h3>
+
+<p>
+معدات موسيقية احترافية لعشاق الإيقاع.
+</p>
+
+<button class="btn" onclick="window.location.href='store.html'">
+عرض المنتج
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- الفوتر -->
+
+<footer>
+
+<p>
+جميع الحقوق محفوظة © موسيقاتي 2026
+</p>
+
+</footer>
+
+</body>
+
+</html>
